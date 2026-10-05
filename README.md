@@ -5,7 +5,7 @@ Phase now: **map layers**. Local-first features (PWA, offline packs, saved place
 
 ## Run
 
-ES modules need a server, not `file://`. `npm start` runs `server.mjs`: static files with no stale caching, plus a live PM2.5 proxy at `/api/aqi` (Air4Thai sends no CORS headers). Any other static host works too; PM2.5 then falls back to the baked snapshot.
+ES modules need a server, not `file://`. `npm start` runs `local-server.mjs`: static files with no stale caching, plus a live PM2.5 proxy at `/api/aqi` (Air4Thai sends no CORS headers). Any other static host works too; PM2.5 then falls back to the baked snapshot.
 
 ```
 npm start        # http://localhost:5173
@@ -16,11 +16,15 @@ npm run bake:data  # BMA flood risk + floodgates, Air4Thai PM2.5, relative low-g
 
 No build step, no npm dependencies. MapLibre and the font are vendored (`vendor/`, `assets/fonts/`).
 
+## Deploying
+
+It is a plain static site: no build step. On Vercel (or any static host) deploy the repo root; `vercel.json` turns off framework detection. `local-server.mjs` is for local use only and is named so that Vercel does not mistake it for a Node app (a root `server.mjs` made Vercel run it as a function that could not find the static files and answered "not found"). Live PM2.5 needs that local server; hosted, the layer falls back to the baked snapshot. The real `protocol/contingency.json` is git-ignored, so a deployment shows the example protocol.
+
 ## Structure
 
 ```
 index.html            page skeleton
-server.mjs            static server + /api/aqi live proxy
+local-server.mjs      static server + /api/aqi live proxy
 vendor/               MapLibre GL 4.7.1 (BSD-3, licence file alongside)
 css/
   base.css            tokens, reset, font, icon mask
@@ -79,7 +83,7 @@ The real `protocol/contingency.json` is git-ignored (it holds personal sites and
 | Boundaries (50 khet, 180 khwaeng) | OpenStreetMap relations | `npm run bake` (rings stitched in `overpass.js`) |
 | BMA flood-risk points, floodgates, pumping stations | data.bangkok.go.th CSV (licence is "not specified" there: check before publishing) | `npm run bake:data` |
 | FM radio stations (frequency, callsign, power) | NBTC open data CSV | `npm run bake:data` |
-| Air quality PM2.5 | Air4Thai | live through `server.mjs` (10 min cache), baked snapshot as fallback. Fetched with curl: the API's TLS chain is incomplete |
+| Air quality PM2.5 | Air4Thai | live through `local-server.mjs` (10 min cache), baked snapshot as fallback. Fetched with curl: the API's TLS chain is incomplete |
 | Relatively low ground | AWS Terrain Tiles | `npm run bake:data`. Smoothed and banded by percentile: the DEM reads city roofs, so absolute heights are wrong |
 | Earthquakes | USGS 2.5+ weekly feed | live, refreshed every 10 min while on |
 | Rain radar | RainViewer | live tiles |

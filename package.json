@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Multi-hazard decision map for Bangkok (map layers phase)",
   "scripts": {
-    "start": "node server.mjs",
+    "start": "node local-server.mjs",
     "bake": "node scripts/bake.mjs",
     "bake:data": "node scripts/bake-data.mjs",
     "test": "node --test tests/*.test.mjs"
