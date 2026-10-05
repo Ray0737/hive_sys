@@ -1,0 +1,43 @@
+/* LINE Seed Sans TH, self-hosted (assets/fonts/NOTE.txt). One weight only. */
+@font-face {
+  font-family: 'line_seed_sans_th';
+  src: url('../assets/fonts/lineseedsansth_rg-webfont.woff2') format('woff2'), url('../assets/fonts/lineseedsansth_rg-webfont.woff') format('woff');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+
+:root {
+  --bg: #000;
+  --fg: #fff;
+  --dim: #8a8a8a;
+  --line: #fff;
+  --line-soft: #333;
+  --hover-bg: #1a1a1a;
+  --alert: #ff2a1f;
+  --warn: #ffb000;
+  --font: 'line_seed_sans_th', Arial, sans-serif;
+  --side-w: 236px;
+  --panel-w: 260px;
+  color-scheme: dark;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box; margin: 0; padding: 0;
+  border-radius: 0; box-shadow: none; text-shadow: none;
+  font-family: var(--font); font-weight: 400;
+}
+html, body { height: 100%; background: var(--bg); color: var(--fg); font-size: 12px; line-height: 1.5; overflow: hidden; }
+button, input { font-size: 12px; color: var(--fg); background: transparent; border: 0; }
+button { cursor: pointer; }
+a { color: inherit; }
+[hidden] { display: none !important; }
+
+button:hover { background: var(--hover-bg); }
+button:focus-visible, input:focus-visible, a:focus-visible { outline: 0; background: var(--fg); color: var(--bg); }
+button[aria-pressed="true"], button[aria-checked="true"] { background: var(--fg); color: var(--bg); }
+
+/* icon = Lucide svg used as a mask so it takes currentColor */
+.i { display: inline-block; flex: none; width: 16px; height: 16px; background: currentColor;
+  -webkit-mask: var(--i) center / contain no-repeat; mask: var(--i) center / contain no-repeat; }
+
+.label { font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--dim); }
+.num { font-variant-numeric: tabular-nums; }

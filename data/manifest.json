@@ -1,0 +1,369 @@
+{
+ "layers": {
+  "shelter": {
+   "file": "shelter.geojson",
+   "count": 7341,
+   "fetched_at": "2026-10-05T11:57:17.653Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "hospital": {
+   "file": "hospital.geojson",
+   "count": 776,
+   "fetched_at": "2026-10-05T11:59:15.615Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "conv": {
+   "file": "conv.geojson",
+   "count": 4553,
+   "fetched_at": "2026-10-05T12:02:00.910Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "super": {
+   "file": "super.geojson",
+   "count": 776,
+   "fetched_at": "2026-10-05T12:05:47.544Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "market": {
+   "file": "market.geojson",
+   "count": 753,
+   "fetched_at": "2026-10-05T12:10:16.877Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "wholesale": {
+   "file": "wholesale.geojson",
+   "count": 51,
+   "fetched_at": "2026-10-05T12:15:27.560Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "fuel": {
+   "file": "fuel.geojson",
+   "count": 2384,
+   "fetched_at": "2026-10-05T12:21:32.072Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "pharmacy": {
+   "file": "pharmacy.geojson",
+   "count": 654,
+   "fetched_at": "2026-10-05T12:28:00.480Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "mall": {
+   "file": "mall.geojson",
+   "count": 372,
+   "fetched_at": "2026-10-05T12:32:56.135Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "bank": {
+   "file": "bank.geojson",
+   "count": 2494,
+   "fetched_at": "2026-10-05T12:37:02.757Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "station": {
+   "file": "station.geojson",
+   "count": 440,
+   "fetched_at": "2026-10-05T12:40:01.841Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "bus": {
+   "file": "bus.geojson",
+   "count": 5560,
+   "fetched_at": "2026-10-05T12:44:43.763Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "pier": {
+   "file": "pier.geojson",
+   "count": 316,
+   "fetched_at": "2026-10-05T12:48:35.082Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "pump": {
+   "file": "pump.geojson",
+   "count": 130,
+   "fetched_at": "2026-10-05T12:54:19.790Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "police": {
+   "file": "police.geojson",
+   "count": 317,
+   "fetched_at": "2026-10-05T12:56:59.424Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "fire": {
+   "file": "fire.geojson",
+   "count": 81,
+   "fetched_at": "2026-10-05T12:59:33.015Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "military": {
+   "file": "military.geojson",
+   "count": 444,
+   "fetched_at": "2026-10-05T11:47:29.294Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "power": {
+   "file": "power.geojson",
+   "count": 344,
+   "fetched_at": "2026-10-05T13:02:25.036Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "air": {
+   "file": "air.geojson",
+   "count": 200,
+   "fetched_at": "2026-10-05T13:04:46.381Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "port": {
+   "file": "port.geojson",
+   "count": 12,
+   "fetched_at": "2026-10-05T13:06:17.973Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "telecom": {
+   "file": "telecom.geojson",
+   "count": 9,
+   "fetched_at": "2026-10-05T13:14:37.378Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "bridge": {
+   "file": "bridge.geojson",
+   "count": 3348,
+   "fetched_at": "2026-10-05T13:08:23.762Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "rail": {
+   "file": "rail.geojson",
+   "count": 605,
+   "fetched_at": "2026-10-05T12:41:38.047Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "waterway": {
+   "file": "waterway.geojson",
+   "count": 9853,
+   "fetched_at": "2026-10-05T12:51:47.377Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "floodrisk": {
+   "file": "floodrisk.geojson",
+   "count": 216,
+   "fetched_at": "2026-10-05T08:44:34.815Z",
+   "source": "Bangkok Metropolitan Administration open data (flood_risk26)",
+   "license": "License not specified"
+  },
+  "floodgate": {
+   "file": "floodgate.geojson",
+   "count": 230,
+   "fetched_at": "2026-10-05T08:44:34.954Z",
+   "source": "Bangkok Metropolitan Administration open data (floodgate)",
+   "license": "License not specified"
+  },
+  "khet": {
+   "file": "khet.geojson",
+   "count": 50,
+   "fetched_at": "2026-10-05T11:51:41.338Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "khwaeng": {
+   "file": "khwaeng.geojson",
+   "count": 180,
+   "fetched_at": "2026-10-05T11:54:46.385Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "radio": {
+   "file": "radio.geojson",
+   "count": 9,
+   "fetched_at": "2026-10-05T13:10:32.603Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "cell": {
+   "file": "cell.geojson",
+   "count": 90,
+   "fetched_at": "2026-10-05T13:12:29.422Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "aqi": {
+   "file": "aqi.geojson",
+   "count": 114,
+   "fetched_at": "2026-10-05T11:43:06.307Z",
+   "source": "Pollution Control Department, Air4Thai (snapshot; the server proxies it live)",
+   "license": "Air4Thai terms apply, check before publishing"
+  },
+  "lowland": {
+   "file": "lowland.png",
+   "kind": "image",
+   "count": 0,
+   "coordinates": [
+    [
+     100.1953125,
+     14.179186142354176
+    ],
+    [
+     100.986328125,
+     14.179186142354176
+    ],
+    [
+     100.986328125,
+     13.410994034321702
+    ],
+    [
+     100.1953125,
+     13.410994034321702
+    ]
+   ],
+   "source": "Terrain Tiles (AWS Open Data; SRTM and other DEMs). Relative only: lowest 10/25/45% of smoothed ground within the area",
+   "license": "see registry.opendata.aws/terrain-tiles",
+   "fetched_at": "2026-10-05T08:49:48.992Z"
+  },
+  "bmapump": {
+   "file": "bmapump.geojson",
+   "count": 143,
+   "fetched_at": "2026-10-05T09:56:24.834Z",
+   "source": "Bangkok Metropolitan Administration open data (pumpstation)",
+   "license": "License not specified"
+  },
+  "fm": {
+   "file": "fm.geojson",
+   "count": 86,
+   "fetched_at": "2026-10-05T11:43:06.135Z",
+   "source": "NBTC open data, FM station technical data (bcstandard.nbtc.go.th)",
+   "license": "NBTC open data catalogue, check terms at datacatalog.nbtc.go.th"
+  },
+  "ammo": {
+   "file": "ammo.geojson",
+   "count": 4,
+   "fetched_at": "2026-10-05T11:47:22.682Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "army": {
+   "file": "army.geojson",
+   "count": 85,
+   "fetched_at": "2026-10-05T11:47:22.686Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "navy": {
+   "file": "navy.geojson",
+   "count": 26,
+   "fetched_at": "2026-10-05T11:47:22.689Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "airforce": {
+   "file": "airforce.geojson",
+   "count": 22,
+   "fetched_at": "2026-10-05T11:47:22.694Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "milother": {
+   "file": "milother.geojson",
+   "count": 603,
+   "fetched_at": "2026-10-05T11:47:22.699Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  },
+  "ammoarea": {
+   "file": "ammoarea.geojson",
+   "count": 4,
+   "fetched_at": "2026-10-05T11:47:29.296Z",
+   "source": "OpenStreetMap via Overpass",
+   "license": "ODbL",
+   "partial": false
+  }
+ },
+ "regions": {
+  "bkk": [
+   100.25,
+   13.45,
+   100.95,
+   14.1
+  ],
+  "eec": [
+   100.75,
+   12.45,
+   102.05,
+   13.75
+  ],
+  "west": [
+   99.45,
+   12.35,
+   100.3,
+   13.5
+  ],
+  "northeast": [
+   100.6,
+   14.1,
+   102.4,
+   15.35
+  ],
+  "country": [
+   97.3,
+   5.6,
+   105.7,
+   20.5
+  ]
+ }
+}

@@ -1,0 +1,6 @@
+# real contingency details stay on this machine; protocol/contingency.example.json is the public template
+protocol/contingency.json
+node_modules/
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Multi-hazard decision map for Bangkok. Support tool, not an official warning.">
+<meta name="theme-color" content="#000000">
+<title>Hive Map</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="vendor/maplibre-gl.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/views.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+<nav class="views" aria-label="View">
+  <a href="index.html" aria-current="page">Map</a>
+  <a href="contingency.html">Contingency</a>
+</nav>
+
+<div id="map"></div>
+
+<aside id="side" aria-label="Map controls">
+  <div class="side-top">
+    <div class="brand">
+      <span class="mark"><span class="i" data-icon="hexagon"></span></span>
+      <div class="name"><b>HIVE</b><span>Hazard map</span></div>
+      <button class="mini" id="btn-locate" aria-label="My location" title="My location"><span class="i" data-icon="locate-fixed"></span></button>
+      <button class="mini" id="btn-about" aria-label="About and legend" title="About and legend"><span class="i" data-icon="info"></span></button>
+    </div>
+    <form id="search" role="search">
+      <span class="i" data-icon="search"></span>
+      <input type="search" placeholder="Search a place" aria-label="Search a place" autocomplete="off">
+    </form>
+    <div id="results" hidden></div>
+    <div class="themes" role="radiogroup" aria-label="Map style">
+      <button class="tile" data-theme="dark" role="radio" title="Dark map"><span class="sw sw-dark"></span>Dark</button>
+      <button class="tile" data-theme="contrast" role="radio" title="Contrast map"><span class="sw sw-contrast"></span>Contrast</button>
+      <button class="tile" data-theme="sat" role="radio" title="Satellite view"><span class="sw sw-sat"></span>Satellite</button>
+    </div>
+    <div class="tools">
+      <button class="toolbtn" id="btn-nearby" aria-pressed="false" title="Tap the map to see what is around that spot"><span class="i" data-icon="crosshair"></span>Nearby</button>
+      <button class="toolbtn" id="btn-measure" aria-pressed="false" title="Tap the map to drop points A, B, C and measure the distance"><span class="i" data-icon="ruler"></span>Measure</button>
+    </div>
+    <div class="layers-head">
+      <span class="label">Layers</span><span id="st-layers" class="label num"></span><span class="grow"></span>
+      <button class="mini" id="btn-link" aria-label="Copy link" title="Copy link to this view"><span class="i" data-icon="link"></span></button>
+      <button class="mini" id="btn-export" aria-label="Export GeoJSON" title="Export visible layers as GeoJSON"><span class="i" data-icon="download"></span></button>
+      <button class="clear" id="btn-clear" title="Turn all layers off">Clear</button>
+    </div>
+  </div>
+  <div id="layers" aria-label="Layers"></div>
+  <footer id="status">
+    <div class="coords"><span id="st-pos" class="num"></span><span id="st-zoom" class="num"></span></div>
+    <span id="st-msg" style="color:var(--warn)"></span>
+    <p>Support tool. Official guidance first. Data: OpenStreetMap contributors, ODbL.</p>
+  </footer>
+</aside>
+<button class="edge" id="btn-layers" aria-label="Toggle sidebar" title="Toggle sidebar" aria-expanded="true"><span class="i" data-icon="chevron-left"></span></button>
+
+<aside id="panel-detail" class="panel" aria-label="Details" hidden></aside>
+
+<div id="legend" class="legend" hidden></div>
+
+<div class="mapctl">
+  <button id="zoom-in" aria-label="Zoom in" title="Zoom in"><span class="i" data-icon="plus"></span></button>
+  <button id="zoom-out" aria-label="Zoom out" title="Zoom out"><span class="i" data-icon="minus"></span></button>
+  <button id="north" aria-label="Reset north" title="Reset north"><span class="i" data-icon="compass"></span></button>
+</div>
+
+<dialog id="about" aria-label="About">
+  <header><h2>Hive Map</h2><button class="mini close" aria-label="Close" title="Close"><span class="i" data-icon="x"></span></button></header>
+  <section class="warn">
+    <span class="label">Read first</span>
+    <p>This is a support and training tool, not an official warning or evacuation authority. Official guidance (DDPM, BMA, school or workplace plan) always wins. Data shown is the last fetched state, never live truth.</p>
+  </section>
+  <section>
+    <span class="label">Toolbar</span>
+    <ul>
+      <li><span class="i" data-icon="crosshair"></span>Nearby: tap the map for the closest hospital, shelter, shop and more</li>
+      <li><span class="i" data-icon="ruler"></span>Measure: drop points A, B, C, drag to adjust, see each leg and the total</li>
+      <li><span class="i" data-icon="locate-fixed"></span>My location</li>
+      <li><span class="i" data-icon="search"></span>Search a place (needs network). Press / to focus</li>
+      <li><span class="i" data-icon="link"></span>Copy a link to this exact view</li>
+      <li><span class="i" data-icon="download"></span>Export visible layers as GeoJSON</li>
+      <li><span class="i" data-icon="moon"></span>Dark, contrast and satellite maps</li>
+    </ul>
+  </section>
+  <section>
+    <span class="label">Sources and licences</span>
+    <p>Map data: OpenStreetMap contributors (ODbL), via Overpass. Tiles: OpenFreeMap, CARTO Dark Matter, Esri World Imagery. Hazard data: BMA open data (flood risk, floodgates), USGS (earthquakes), Air4Thai (PM2.5), RainViewer (radar), AWS Terrain Tiles (low-lying ground). Icons: Lucide (ISC). Font: LINE Seed TH.</p>
+    <p>Military layers (army, navy, air force, ammunition and ordnance depots) show public OpenStreetMap data only, sorted by the tags and names mappers wrote. Ammunition and ordnance sites are marked as hazards to avoid in an emergency, for relief logistics and restricted-area awareness. Nothing is inferred beyond what is already public.</p>
+  </section>
+  <section>
+    <span class="label">Not built yet</span>
+    <p>Offline packs, saved places, road-status pins, routing, drill mode. Flood extent (GISTDA) is not wired: only BMA flood-risk points and floodgates.</p>
+  </section>
+</dialog>
+
+<script src="vendor/maplibre-gl.js"></script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

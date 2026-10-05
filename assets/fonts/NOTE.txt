@@ -1,0 +1,3 @@
+LINE Seed Sans TH (regular). Obtained from the same mirror the other site uses (maketline.github.io/goodday/font).
+LINE publishes LINE Seed under the SIL Open Font License 1.1; confirm the current terms at https://seed.line.me before shipping,
+and replace these files with the ones from LINE's own download if you want the original source.

@@ -1,0 +1,265 @@
+{
+  "title": "Contingency protocol",
+  "status": "Example template",
+  "updated": "2026-10-05",
+  "note": "This is the public example: placeholder sites and no real people. Copy it to protocol/contingency.json (git-ignored) and put your real details there. Edit that file to change the page, then reload. Amber TO FILL marks a blank you still need to complete. Amber CONFIRM marks wording that is a draft assumption, not something you told me. Nothing here is an official instruction: official guidance (DDPM, BMA, TMD, workplace or school plan) always wins.",
+
+  "sites": [
+    { "id": "S1", "name": "Secondary site A", "kind": "secondary", "dms": "14°00'00.0\"N 101°00'00.0\"E" },
+    { "id": "S2", "name": "Secondary site B", "kind": "secondary", "dms": "13°00'00.0\"N 101°00'00.0\"E" },
+    { "id": "B1", "name": "Bangkok alternate 1", "kind": "bkk", "dms": "13°46'00.0\"N 100°30'00.0\"E" },
+    { "id": "B2", "name": "Bangkok alternate 2", "kind": "bkk", "dms": "13°44'00.0\"N 100°30'00.0\"E" },
+    { "id": "B3", "name": "Bangkok alternate 3", "kind": "bkk", "dms": "13°45'00.0\"N 100°28'00.0\"E" },
+    { "id": "B4", "name": "Bangkok alternate 4", "kind": "bkk", "dms": "13°45'00.0\"N 100°32'00.0\"E" }
+  ],
+
+  "sections": [
+    {
+      "id": "purpose",
+      "title": "Purpose and scope",
+      "blocks": [
+        { "type": "p", "text": "This protocol tells every member what to do the moment an emergency starts, where to go if staying at home is not possible, and how the team keeps in contact while it happens." },
+        { "type": "kv", "rows": [
+          ["Covers", "Any emergency that threatens safety or stops normal activity: earthquake, flood, fire, storm, civil disruption, loss of power or communications. One response for all of them."],
+          ["Does not cover", "Medical treatment, rescue operations, or anything an official authority has told you to do differently. Follow the authority."],
+          ["Who it is for", "[fill] (list the people or teams this applies to)"],
+          ["Plan owner", "[fill]"],
+          ["Pick-ups on the way home", "Family and the people named in this plan [fill]"]
+        ] }
+      ]
+    },
+    {
+      "id": "activation",
+      "title": "When this protocol applies",
+      "blocks": [
+        { "type": "p", "text": "The protocol is active from the moment anyone in the team recognises an emergency. No hazard assessment is needed to start Step 1, and nobody needs to wait for permission or confirmation." },
+        { "type": "list", "items": [
+          "Start Step 1 (go home) in every case, whatever the cause.",
+          "Move to Step 2 only when one of the Step 2 triggers below is true.",
+          "If an official authority gives a different instruction (evacuate in another direction, shelter in place), follow the authority and tell net control when you can.",
+          "The protocol stays active until net control, or the plan owner, announces it is over. [confirm]"
+        ] }
+      ]
+    },
+    {
+      "id": "evacuation",
+      "title": "Emergency evacuation",
+      "blocks": [
+        { "type": "p", "text": "Two steps, always in this order. Step 1 is the default. Step 2 is the fallback." },
+        { "type": "steps", "items": [
+          {
+            "id": "E1", "label": "Primary", "title": "Go home immediately",
+            "body": "In every emergency, whatever the cause, go home immediately.",
+            "details": [
+              "Stop what you are doing. Do not finish tasks and do not wait for others.",
+              "Take only what is already with you: phone, radio, keys, wallet, medication. Do not go back for belongings. [confirm]",
+              "Tell net control or your team lead you are going home (radio emergency channel, or message if you have no radio).",
+              "Choose the safest route, not just the shortest. Use the map to check for flooding, closures and hazards first (section 5).",
+              "Go directly. The only people you pick up on the way are your family and the people named in this plan [fill]. No other stops and no errands.",
+              "At home, report HOME SAFE. Stay there unless a Step 2 trigger applies."
+            ]
+          },
+          {
+            "id": "E2", "label": "Secondary", "title": "Move to a secondary location",
+            "body": "If home cannot be reached or is not safe, move to a secondary location from section 4. Which one depends on the situation: see the table below the steps.",
+            "details": [
+              "Triggers: home cannot be reached [fill] (set a time or distance limit), home is damaged, flooded, on fire or otherwise unsafe, an official authority orders you to leave, or net control calls Step 2.",
+              "Before leaving: check fuel or charge, take the go-bag (section 9), switch off gas and electricity at home if you can do so safely.",
+              "Bangkok is not safe: go to a secondary site, whichever you can reach more safely.",
+              "You cannot travel far from where you are: go to the nearest Bangkok alternate (the Bangkok alternates) instead.",
+              "Plan a main route and a fallback route before you set off. Check both on the map.",
+              "Report MOVING with your destination and expected arrival time.",
+              "On arrival report AT SITE and your headcount, then follow the site card in section 7."
+            ]
+          }
+        ] },
+        { "type": "h3", "text": "Where to go" },
+        { "type": "table", "headers": ["Situation", "Go to", "Which one"], "rows": [
+          ["Emergency, home is reachable and safe", "Home (Step 1)", "Your home"],
+          ["Bangkok is not safe", "Secondary site (A or B)", "Whichever you can reach more safely"],
+          ["You cannot travel far from where you are", "Bangkok alternate: the Bangkok alternates", "The nearest one you can reach"]
+        ] },
+        { "type": "note", "tone": "warn", "text": "Never drive or walk through floodwater of unknown depth, under a damaged structure, or past a barrier set by officials. A longer safe route beats a short dangerous one." }
+      ]
+    },
+    {
+      "id": "locations",
+      "title": "Secondary and alternate locations",
+      "blocks": [
+        { "type": "sites" },
+        { "type": "p", "text": "Secondary sites A and B are for when Bangkok is not safe. the Bangkok alternates are for when you cannot travel far from where you are. Coordinates are written as degrees, minutes and seconds, exactly as supplied. Open on map shows the site with nearby hospitals; the Measure tool (Walk or Drive) gives a road estimate." }
+      ]
+    },
+    {
+      "id": "map",
+      "title": "Using the map during an emergency",
+      "blocks": [
+        { "type": "p", "text": "The Map tab helps choose a route and a site. It shows the last known state of its data, not live conditions, and it knows nothing about closures or flooding on a given road. Treat it as a planning aid." },
+        { "type": "table", "headers": ["Task", "How"], "rows": [
+          ["Estimate a route", "Measure, drop point A at your position and B at the destination, choose Walk or Drive. The straight-line figure is always shown next to the road figure."],
+          ["Find what is near you", "Nearby, then tap the map or use your location. Lists the closest hospital, shelter, fuel, shop and more, with distances."],
+          ["Check flooding", "Switch on BMA flood-risk points, BMA floodgates and pumping stations, relatively low ground, and rain radar. Avoid roads in low ground during heavy rain."],
+          ["Check shaking", "Switch on Earthquakes (USGS) for recent events in the region."],
+          ["Check air quality", "Switch on Air quality PM2.5. The legend shows the Thai bands."],
+          ["Avoid restricted land", "Switch on the Military layers. Keep clear of military land and of ammunition or ordnance sites; they are shown in red as hazards."],
+          ["Find communications", "Comms layers show FM radio stations with frequencies, radio and TV towers and cell towers, from public data."],
+          ["Share a view", "Copy link in the layers bar sends the exact view and layers to someone else."]
+        ] },
+        { "type": "note", "tone": "info", "text": "Routing and some layers need a network. If the network is down, use the printed copy of this page and the coordinates in section 4." }
+      ]
+    },
+    {
+      "id": "radio",
+      "title": "Radio communications",
+      "blocks": [
+        { "type": "kv", "rows": [
+          ["System", "Motorola radio"],
+          ["Net control", "[fill] (who runs the net)"],
+          ["Check-in schedule", "[fill] (for example every 30 minutes on the hour and half hour)"]
+        ] },
+        { "type": "h3", "text": "Channel plan" },
+        { "type": "p", "text": "Template rows only. Channel numbers, frequencies, talkgroups and codes stay blank until you set them; this page does not invent any." },
+        { "type": "table", "fill": true, "headers": ["Ch", "Name", "Use", "Frequency / talkgroup", "Code / tone", "Notes"], "rows": [
+          ["", "Emergency (all stations)", "", "", "", ""],
+          ["", "Command / net control", "", "", "", ""],
+          ["", "Evacuation traffic", "", "", "", ""],
+          ["", "Fallback", "", "", "", ""]
+        ] },
+        { "type": "h3", "text": "Operators" },
+        { "type": "table", "fill": true, "headers": ["Role", "Callsign", "Name", "Phone", "Location"], "rows": [
+          ["Net control", "", "", "", ""],
+          ["Net control, backup", "", "", "", ""],
+          ["Operator, secondary site A", "", "", "", "Secondary site A"],
+          ["Operator, secondary site B", "", "", "", "Secondary site B"],
+          ["Operator, Bangkok", "", "", "", ""]
+        ] },
+        { "type": "h3", "text": "How to call" },
+        { "type": "list", "ordered": true, "items": [
+          "Switch to the emergency channel and listen first. Do not talk over someone else.",
+          "Call net control by callsign, then give your own: \"Net control, this is [your callsign].\"",
+          "Wait for net control to answer, then give a short report in this order: callsign, status, location, number of people, needs.",
+          "Use the status words below so everyone reads them the same way.",
+          "Keep messages short. Repeat anything critical (a location, a number). Confirm what you heard.",
+          "Net control acknowledges every report. All other stations keep the channel clear for emergency traffic."
+        ] },
+        { "type": "table", "headers": ["Status word", "Meaning"], "rows": [
+          ["HOME SAFE", "You are at home and safe."],
+          ["MOVING", "You are travelling. Give destination and expected arrival."],
+          ["AT SITE", "You have reached a secondary location. Give headcount."],
+          ["NEED HELP", "You need assistance. Give location and what is needed."],
+          ["NO CHANGE", "Routine check-in, nothing new."]
+        ] },
+        { "type": "p", "text": "Status words are draft wording. [confirm]" },
+        { "type": "h3", "text": "If the radio fails" },
+        { "type": "list", "items": [
+          "Try the fallback channel, then change batteries or move to higher open ground and try again.",
+          "Use phone or messaging if the network works. Short messages first.",
+          "If there is no contact at all, carry on with the plan: Step 1, then Step 2 if a trigger applies. Report as soon as contact returns."
+        ] }
+      ]
+    },
+    {
+      "id": "sitecards",
+      "title": "Site cards",
+      "blocks": [
+        { "type": "p", "text": "One card per location. Fill in what you know; blanks stay amber so you can see what is missing." },
+        { "type": "sitecards", "fields": [
+          ["Capacity (people)", "capacity"],
+          ["Access and entry", "access"],
+          ["Site contact", "contact"],
+          ["Supplies on site", "supplies"],
+          ["Water and power", "utilities"],
+          ["Notes", "notes"]
+        ] }
+      ]
+    },
+    {
+      "id": "hazards",
+      "title": "Hazard quick reference",
+      "blocks": [
+        { "type": "note", "tone": "warn", "text": "Draft summary of widely published advice. Confirm every line with DDPM, TMD and BMA before relying on it, and have it reviewed by someone who knows the hazard." },
+        { "type": "table", "headers": ["Hazard", "While it is happening", "While moving", "Avoid"], "rows": [
+          ["Earthquake", "Drop, cover and hold on. Stay away from glass and heavy objects that can fall.", "Wait until shaking stops. Expect aftershocks. Use stairs, not lifts. Check for injuries first.", "Damaged buildings, bridges and overpasses that look damaged, anything hanging overhead."],
+          ["Flood", "Move to higher ground or an upper floor. Keep clear of electrical equipment.", "Prefer elevated roads. Turn back if depth is unknown.", "Underpasses, low roads, moving water, walking through floodwater."],
+          ["Fire", "Leave by the nearest exit. Stay low in smoke. Close doors behind you.", "Keep upwind and away from the fire. Let emergency vehicles pass.", "Lifts, going back inside, smoke-filled routes."],
+          ["Storm / heat", "Shelter in a sturdy building until it passes. Keep drinking water.", "Slow down in heavy rain or wind. Stop somewhere safe if visibility is poor.", "Trees, signs, loose power lines, open exposure."]
+        ] }
+      ]
+    },
+    {
+      "id": "gobag",
+      "title": "Go-bag and vehicle checklist",
+      "blocks": [
+        { "type": "p", "text": "Keep the bag packed and by the door. Check it every [fill] months." },
+        { "type": "checklist", "columns": 2, "items": [
+          "Motorola radio, charged, with spare battery or charger",
+          "Phone, charging cable and a power bank",
+          "Printed copy of this protocol and the site coordinates",
+          "ID, wallet and some cash in small notes",
+          "Medication for at least three days",
+          "Drinking water and food that needs no cooking",
+          "Torch with spare batteries",
+          "First-aid kit",
+          "Warm layer and a rain layer",
+          "Keys: home, vehicle, site",
+          "Vehicle fuel tank at least half full [confirm]",
+          "Paper map or printed route to each site"
+        ] }
+      ]
+    },
+    {
+      "id": "log",
+      "title": "Accountability log",
+      "blocks": [
+        { "type": "p", "text": "Print this page and use the table to record each report. Net control keeps it; each site keeps a copy." },
+        { "type": "table", "headers": ["Time", "Name", "Callsign", "Status", "Location", "People", "Needs"], "rows": [
+          ["", "", "", "", "", "", ""], ["", "", "", "", "", "", ""], ["", "", "", "", "", "", ""],
+          ["", "", "", "", "", "", ""], ["", "", "", "", "", "", ""], ["", "", "", "", "", "", ""]
+        ], "blank": true }
+      ]
+    },
+    {
+      "id": "contacts",
+      "title": "Contacts",
+      "blocks": [
+        { "type": "h3", "text": "Public emergency numbers (Thailand)" },
+        { "type": "table", "headers": ["Service", "Number"], "rows": [
+          ["Police", "191"], ["Fire and rescue", "199"], ["Medical emergency (EMS)", "1669"],
+          ["Disaster prevention (DDPM) hotline", "1784"], ["Highway police", "1193"], ["Tourist police", "1155"], ["BMA call centre", "1555"]
+        ] },
+        { "type": "p", "text": "Verify these numbers before printing. [confirm]" },
+        { "type": "h3", "text": "Team contacts" },
+        { "type": "table", "fill": true, "headers": ["Who", "Role", "Phone", "Alternative"], "rows": [
+          ["", "Plan owner", "", ""], ["", "Net control", "", ""], ["", "Pick-up on the way home", "", ""], ["", "Pick-up on the way home", "", ""], ["", "Site contact, secondary site A", "", ""], ["", "Site contact, secondary site B", "", ""]
+        ] }
+      ]
+    },
+    {
+      "id": "review",
+      "title": "Review, drills and document control",
+      "blocks": [
+        { "type": "kv", "rows": [
+          ["Review cadence", "[fill] (for example every six months and after every real event)"],
+          ["Drill schedule", "[fill] (a timed go-home drill and a radio check-in drill)"],
+          ["Last drill", "[fill]"],
+          ["After an event", "Record what worked and what did not, update this file, and re-issue the printed copies."],
+          ["Distribution", "[fill] (who holds a printed copy)"]
+        ] },
+        { "type": "p", "text": "The file lives in protocol/contingency.json. Change it there; the page and the map's Contingency sites layer both read from it." }
+      ]
+    },
+    {
+      "id": "open",
+      "title": "Open questions",
+      "blocks": [
+        { "type": "p", "text": "Decisions still open. Settle each one, then replace the matching CONFIRM or TO FILL above." },
+        { "type": "list", "ordered": true, "items": [
+          "What is the trigger limit for \"home cannot be reached\" (time, distance, or a judgement call)?",
+          "Who runs net control, who is the backup, and how often is there a check-in?",
+          "Who may declare the protocol finished?",
+          "What is available at each site (capacity, water, power, contact)?"
+        ] }
+      ]
+    }
+  ]
+}
