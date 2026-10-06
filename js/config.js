@@ -21,7 +21,7 @@ export const LAYERS = [
 
   // ---- Access ----
   { id: 'shelter',  g: 0, icon: 'tent',     name: 'Shelters / assembly', z: 14, f: ['["emergency"="assembly_point"]', '["amenity"="shelter"]', '["amenity"="school"]', '["leisure"="stadium"]', '["leisure"="park"]', '["amenity"="place_of_worship"]["religion"="buddhist"]'] },
-  { id: 'hospital', g: 0, icon: 'hospital', name: 'Hospitals / clinics', color: '#ff4d4d', z: 12, f: ['["amenity"~"^(hospital|clinic)$"]'], on: true },
+  { id: 'hospital', g: 0, icon: 'hospital', name: 'Hospitals / clinics', color: '#ff4d4d', z: 12, f: ['["amenity"~"^(hospital|clinic)$"]'] },
 
   // ---- Supply ----
   { id: 'conv',      g: 1, icon: 'store',         name: 'Convenience stores',  z: 14, f: ['["shop"="convenience"]'] },
@@ -40,7 +40,7 @@ export const LAYERS = [
   { id: 'pier',    g: 2, icon: 'ship',        name: 'Boats / piers', z: 12, f: ['["amenity"="ferry_terminal"]', '["public_transport"="station"]["ferry"="yes"]', '["man_made"="pier"]["name"]'] },
 
   // ---- Water ----
-  { id: 'waterway',  g: 3, icon: 'waves',     name: 'Rivers / canals',       z: 11, kind: 'line', st: 'water', f: ['["waterway"~"^(river|canal)$"]'], on: true },
+  { id: 'waterway',  g: 3, icon: 'waves',     name: 'Rivers / canals',       z: 11, kind: 'line', st: 'water', f: ['["waterway"~"^(river|canal)$"]'] },
   { id: 'pump',      g: 3, icon: 'droplets',  name: 'Pumps / gates / works', z: 12, f: ['["man_made"~"^(pumping_station|water_works)$"]', '["waterway"~"^(sluice_gate|lock_gate)$"]'] },
   { id: 'bmapump',   g: 3, icon: 'droplets',  name: 'BMA pumping stations',  static: true },
   { id: 'floodgate', g: 3, icon: 'door-open', name: 'BMA floodgates',        static: true },
@@ -69,7 +69,7 @@ export const LAYERS = [
   { id: 'milother',  g: 9, icon: 'flag',         name: 'Other (ranges, training, posts)', static: true, split: 'milpts', pick: 'other', color: '#9a9a9a' },
 
   // ---- Contingency: sites from protocol/contingency.json (edit that file, reload) ----
-  { id: 'sites', g: 10, icon: 'map-pin', name: 'Contingency sites', feed: 'protocol/contingency.json', fallback: 'protocol/contingency.example.json', color: '#00e5a0', size: 1.25, on: true },
+  { id: 'sites', g: 10, icon: 'map-pin', name: 'Contingency sites', feed: 'protocol/contingency.json', fallback: 'protocol/contingency.example.json', color: '#00e5a0', size: 1.25 },
 
   // ---- Hazard data ----
   { id: 'floodrisk', g: 7, icon: 'triangle-alert', name: 'BMA flood-risk points', static: true },
